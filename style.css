@@ -1,0 +1,193 @@
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: #ecf2f8;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 13px;
+}
+
+main {
+  width: 1200px;
+  padding: 72px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-gap: 35px;
+      grid-template-areas: "violet-container violet-container gray-container white-long-container" "white-container blue-container blue-container white-long-container";
+}
+
+.card {
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
+.profilePhoto {
+  border-radius: 100%;
+  border: 2px solid #cfcfcf;
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+}
+
+.upperPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+.verifiedGraduate {
+  font-size: 12px;
+  margin: 0;
+  -webkit-filter: opacity(50%);
+          filter: opacity(50%);
+}
+
+.titleText {
+  font-size: 20px;
+}
+
+.reviewText {
+  -webkit-filter: opacity(70%);
+          filter: opacity(70%);
+  line-height: 1.5;
+}
+
+.violet-container {
+  background: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 100px;
+  background-color: #7541c8;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: violet-container;
+  -webkit-animation: fadeIn 1s, moveInRight 1s;
+          animation: fadeIn 1s, moveInRight 1s;
+}
+
+.gray-container {
+  background-color: #48556a;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: gray-container;
+  -webkit-animation: fadeIn 1s, moveInTop 1s;
+          animation: fadeIn 1s, moveInTop 1s;
+}
+
+.white-long-container,
+.white-container {
+  background-color: white;
+  color: #19212e;
+}
+
+.white-long-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: white-long-container;
+  -webkit-animation: fadeIn 1s, moveInLeft 1s;
+          animation: fadeIn 1s, moveInLeft 1s;
+}
+
+.white-container {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: white-container;
+  -webkit-animation: fadeIn 1s, moveInRight 1s;
+          animation: fadeIn 1s, moveInRight 1s;
+}
+
+.blue-container {
+  background-color: #19212e;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: blue-container;
+  -webkit-animation: fadeIn 1s, moveInBottom 1s;
+          animation: fadeIn 1s, moveInBottom 1s;
+}
+
+@media (max-width: 1200px) {
+  main {
+    padding: 36px;
+    width: 800px;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "violet-container violet-container gray-container" "white-container blue-container blue-container" "white-long-container white-long-container white-long-container";
+  }
+  .white-long-container {
+    -webkit-animation: fadeIn 1s, moveInBottom 1s;
+            animation: fadeIn 1s, moveInBottom 1s;
+  }
+  .white-container {
+    -webkit-animation: fadeIn 1s, moveInRight 1s;
+            animation: fadeIn 1s, moveInRight 1s;
+  }
+  .blue-container {
+    -webkit-animation: fadeIn 1s, moveInLeft 1s;
+            animation: fadeIn 1s, moveInLeft 1s;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 600px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "violet-container violet-container" "white-container gray-container" "blue-container blue-container" "white-long-container white-long-container";
+  }
+  .gray-container {
+    -webkit-animation: fadeIn 1s, moveInLeft 1s;
+            animation: fadeIn 1s, moveInLeft 1s;
+  }
+}
+
+@media (max-width: 700px) {
+  main {
+    width: 400px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: "violet-container" "white-container" "gray-container" "blue-container" "white-long-container";
+  }
+  .card {
+    -webkit-animation: none;
+            animation: none;
+  }
+  .violet-container {
+    background-position: top right 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  main {
+    padding: 24px;
+    width: 300px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

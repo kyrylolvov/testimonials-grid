@@ -1,0 +1,154 @@
+$font: "Barlow Semi Condensed", sans-serif;
+$moderateViolet: hsl(263, 55%, 52%);
+$veryDarkGrayishBlue: hsl(217, 19%, 35%);
+$veryDarkBlakishBlue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$lightGray: hsl(0, 0%, 81%);
+$lightGrayishBlue: hsl(210, 46%, 95%);
+
+body {
+  font-family: $font;
+  background-color: $lightGrayishBlue;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-size: 13px;
+}
+main {
+  width: 1200px;
+  padding: 72px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 35px;
+  grid-template-areas:
+    "violet-container violet-container gray-container white-long-container"
+    "white-container blue-container blue-container white-long-container";
+}
+.card {
+  border-radius: 15px;
+  box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.card:hover {
+  transform: scale(1.025);
+}
+.profilePhoto {
+  border-radius: 100%;
+  border: 2px solid $lightGray;
+  width: 30px;
+  height: 30px;
+  margin: 0 15px 0 0;
+}
+.upperPart {
+  display: flex;
+}
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+.verifiedGraduate {
+  font-size: 12px;
+  margin: 0;
+  filter: opacity(50%);
+}
+.titleText {
+  font-size: 20px;
+}
+.reviewText {
+  filter: opacity(70%);
+  line-height: 1.5;
+}
+.violet-container {
+  background: url(/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 100px;
+  background-color: $moderateViolet;
+  grid-area: violet-container;
+  animation: fadeIn 1s, moveInRight 1s;
+}
+.gray-container {
+  background-color: $veryDarkGrayishBlue;
+  grid-area: gray-container;
+  animation: fadeIn 1s, moveInTop 1s;
+}
+.white-long-container,
+.white-container {
+  background-color: $white;
+  color: $veryDarkBlakishBlue;
+}
+.white-long-container {
+  grid-area: white-long-container;
+  animation: fadeIn 1s, moveInLeft 1s;
+}
+.white-container {
+  grid-area: white-container;
+  animation: fadeIn 1s, moveInRight 1s;
+}
+.blue-container {
+  background-color: $veryDarkBlakishBlue;
+  grid-area: blue-container;
+  animation: fadeIn 1s, moveInBottom 1s;
+}
+@media (max-width: 1200px) {
+  main {
+    padding: 36px;
+    width: 800px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "violet-container violet-container gray-container"
+      "white-container blue-container blue-container"
+      "white-long-container white-long-container white-long-container";
+  }
+  .white-long-container {
+    animation: fadeIn 1s, moveInBottom 1s;
+  }
+  .white-container {
+    animation: fadeIn 1s, moveInRight 1s;
+  }
+  .blue-container {
+    animation: fadeIn 1s, moveInLeft 1s;
+  }
+}
+@media (max-width: 900px) {
+  main {
+    width: 600px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "violet-container violet-container"
+      "white-container gray-container"
+      "blue-container blue-container"
+      "white-long-container white-long-container";
+  }
+  .gray-container {
+    animation: fadeIn 1s, moveInLeft 1s;
+  }
+}
+@media (max-width: 700px) {
+  main {
+    width: 400px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "violet-container"
+      "white-container"
+      "gray-container"
+      "blue-container"
+      "white-long-container";
+  }
+  .card {
+    animation: none;
+  }
+  .violet-container {
+    background-position: top right 50px;
+  }
+}
+@media (max-width: 500px) {
+  main {
+    padding: 24px;
+    width: 300px;
+  }
+}
